@@ -1,0 +1,30 @@
+    <div class="flex items-center justify-center h-screen">
+
+        <div class="bg-pink-700 text-white font-bold rounded-lg border shadow-lg p-10">
+            <h2 class="text-2xl font-bold mb-4 text-pink-50">Ingrese Producto</h2>
+            <form action="/api/productos/guardar" method="POST">
+
+                <div class="text-pink-50 mt-3">
+                    <label class="block mb-1" for="forms-labelOverInputCode">Nombre</label>
+                    <input
+                        class="w-full h-10 px-3 text-pink-900 border rounded-lg focus:shadow-outline"
+                        type="text" name="title" />
+                </div>
+                <div class="text-pink-50 mt-3">
+                    <label class="block mb-1" for="forms-labelOverInputCode">Precio</label>
+                    <input
+                        class="w-full h-10 px-3 text-pink-900 border rounded-lg focus:shadow-outline"
+                        type="text" name="price" />
+                </div>
+                <div class="text-pink-50 mt-3">
+                    <label class="block mb-1" for="forms-labelOverInputCode">URL de foto</label>
+                    <input
+                        class="w-full h-10 px-3 text-pink-900 border rounded-lg focus:shadow-outline"
+                        type="text" name="thumbnail" />
+                </div>
+                <button
+                    class="w-full h-10 px-3 mt-3 text-pink-50 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Enviar</button>
+            </form>
+        </div>
+
+    </div>

@@ -1,0 +1,32 @@
+<div class="flex items-center justify-center h-screen">
+    <div class="bg-pink-700 text-white font-bold rounded-lg border shadow-lg p-10">
+        <h2 class="text-2xl font-bold mb-4 text-pink-50 text-center">Vista de Productos</h1>
+            {{#if hayProductos}}
+            <div class="grid grid-cols-4 gap-2">
+                <div class="bg-white p-3 rounded text-pink-900 text-center text-xl">Nombre</div>
+                <div class="bg-white p-3 rounded text-pink-900 text-center text-xl">Precio</div>
+                <div class="bg-white p-3 rounded text-pink-900 text-center text-xl">Imagen</div>
+                <div class="bg-white p-3 rounded text-pink-900 text-center text-xl">Eliminar</div>
+                {{#each productos}}
+                <div class="bg-white p-3 rounded text-pink-600 text-center">{{this.title}}</div>
+                <div class="bg-white p-3 rounded text-pink-600 text-center">{{this.price}}</div>
+                <div class="bg-white p-3 rounded text-pink-600 text-center">{{this.thumbnail}}</div>
+                <div class="flex justify-center bg-white p-3 rounded text-pink-600">
+                    {{!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg> --}}
+                    <form method="GET" action="/api/productos/borrado/{{this.id}}">
+                        <button
+                            class="w-full h-10 px-3 mt-3 text-pink-50 transition-colors duration-150 bg-indigo-700 rounded-lg focus:shadow-outline hover:bg-indigo-800">Enviar</button>
+                    </form>
+                </div>
+
+                {{/each}}
+                </table>
+            </div>
+            {{else}}
+            <h2 class="text-xl font-bold mb-4 text-pink-50 text-center">Actualmente no hay productos</h1>
+                {{/if}}
+    </div>
